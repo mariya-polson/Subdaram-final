@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap");
+@import "variables";
+@import "utils";
+body {
+  font-family: "Asap", sans-serif;
+  overflow-x: hidden;
+}
+.navbar {
+  background-color: $color-1;
+  a.nav-link,
+  span.sign-in {
+    @include text-property($font-16, $color-2, $font-500);
+  }
+  i.fa-search {
+    color: $color-3;
+    margin: 0 1rem 0 6rem;
+  }
+  .nav-item {
+    margin: 0 0 0 1rem;
+  }
+}
+.first-section {
+  background: url(../images/first-background.png) no-repeat;
+  background-size: cover;
+  #collapseExample {
+    position: absolute;
+    right: 185px;
+    .search-toggle {
+      background-color: transparent;
+      input[type="text"] {
+        background: url(../images/search-arrow.png) no-repeat;
+        background-position: 136px;
+        border: none;
+        padding-bottom: 0.5rem;
+        font-size: $font-14;
+
+        border-bottom: 1px solid $color-3;
+      }
+    }
+  }
+  .buying {
+    padding-top: 10rem;
+    h2 {
+      &.heading-1 {
+        @include text-property($font-50, $color-3, $font-700);
+      }
+    }
+    h5 {
+      &.heading-2 {
+        @include text-property($font-16, $color-3, $font-400);
+      }
+    }
+    h4 {
+      &.heading-3 {
+        @include text-property($font-25, $color-3, $font-400);
+      }
+    }
+    button {
+      &.apply {
+        @include text-property($font-16, $color-3, $font-700);
+        background-color: $color-4;
+        border-radius: 20px;
+        width: 158px;
+        height: 40px;
+      }
+    }
+    h6 {
+      &.heading-4 {
+        @include text-property($font-20, $color-3, $font-700);
+        margin-top: 4rem;
+      }
+    }
+  }
+  .flex-row {
+    position: relative;
+    top: 67px;
+    .blue-card,
+    .green-card {
+      @include card-property($color-5);
+      img.card-img-top {
+        width: 45px;
+        height: 45px;
+        margin: 1rem auto;
+      }
+      .card-title {
+        @include text-property($font-20, $color-3, $font-700);
+        text-transform: capitalize;
+        text-align: center;
+      }
+      ul {
+        @include text-property($font-18, $color-3, $font-400);
+        list-style: none;
+        text-transform: capitalize;
+        line-height: 2;
+        li {
+          position: relative;
+          &::before {
+            position: absolute;
+            left: -1.2em;
+            bottom: 0.8rem;
+            content: " ";
+            display: block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid $color-7;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .green-card {
+      @include card-property($color-8);
+      margin: 0 0 0 18px;
+    }
+  }
+}
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  color: $color-3;
+  background-color: $color-4;
+  border: none;
+}
+.btn:first-child:hover,
+:not(.btn-check) + .btn:hover {
+  color: $color-3;
+  background-color: $color-4;
+  border: none;
+}
+
+.second-section {
+  padding: 0 0 13.3rem 0;
+  background-color: $color-12;
+  .second-section-col {
+    padding: 7rem 0 1rem 0;
+    .scheme-card {
+      @include card-property($color-3);
+      border-radius: 5px;
+      width: 17rem;
+      .img-space {
+        background-color: $color-9;
+        padding: 30px 104px;
+        margin: 5px;
+        border-radius: 5px 5px 0px 0px;
+        .card-img-top {
+          width: 50px;
+          height: 50px;
+          margin: 0 auto;
+        }
+      }
+      .card-title {
+        @include text-property($font-16, $color-1, $font-700);
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .card-text {
+        text-align: center;
+
+        a {
+          @include text-property($font-14, $color-5, $font-500);
+          text-decoration: none;
+          span img {
+            margin: 0 0 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .contact-container {
+    .contact-column,
+    .carousel-column {
+      @include card-property($color-3);
+      border-radius: 5px;
+      // background-color: lightpink;
+      width: 568px;
+    }
+    .contact-column {
+      .nav {
+        flex-wrap: nowrap;
+        border-bottom: 1px solid $color-14;
+        .nav-link {
+          @include text-property($font-14, $color-10, $font-400);
+          display: flex;
+          padding: 10px 5px;
+          &.active {
+            @include text-property($font-14, $color-10, $font-700);
+            background-color: white;
+            border-radius: 0;
+            padding: 10px 5px;
+            border-bottom: 3px solid $color-13;
+            img {
+              filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+            }
+          }
+          span.tab-space {
+            margin: 5px 8px 0 0;
+          }
+        }
+      }
+      .tab-content {
+        label {
+          @include text-property($font-14, $color-10, $font-500);
+          text-transform: capitalize;
+          padding: 20px 0 0;
+        }
+        .reset-search {
+          .reset {
+            @include tab-button-property;
+            border: 1px solid $color-5;
+            margin: 0 10px 0 0;
+            @include text-property($font-16, $color-5, $font-500);
+          }
+          .search-button {
+            @include tab-button-property;
+            @include text-property($font-16, $color-3, $font-500);
+            background: $color-5 0% 0% no-repeat padding-box;
+          }
+        }
+
+        .form-select {
+          width: 70%;
+          background-image: url(../images/tab-select-arrow.png);
+          background-repeat: no-repeat;
+          background-position: right 0.75rem center;
+          background-size: 10px 5px;
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid $color-15;
+          @include text-property($font-14, $color-14, $font-400);
+          text-transform: capitalize;
+
+          &:focus {
+            border: none;
+            outline: 0;
+            box-shadow: none;
+          }
+        }
+
+        .tab-pane {
+          padding: 30px 30px 0 30px;
+        }
+        .address-row {
+          .address-heading {
+            @include text-property($font-20, $color-10, $font-500);
+            text-transform: capitalize;
+          }
+          .address {
+            @include text-property($font-14, $color-10, $font-400);
+            text-transform: capitalize;
+          }
+        }
+        .position-row {
+          display: flex;
+          flex-direction: column;
+          .position-col {
+            display: flex;
+          }
+          h4 {
+            @include text-property($font-14, $color-10, $font-700);
+            text-transform: capitalize;
+          }
+          h3 {
+            @include text-property($font-14, $color-10, $font-400);
+            text-transform: capitalize;
+          }
+          .ash-round {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eff3f8 0% 0% no-repeat padding-box;
+            border-radius: 50%;
+            img {
+              width: 13px;
+              height: 13px;
+            }
+          }
+        }
+      }
+    }
+    .carousel-column {
+      h3 {
+        @include text-property($font-20, $color-10, $font-700);
+      }
+      ul {
+        @include text-property($font-14, $color-10, $font-700);
+        list-style: none;
+        text-transform: capitalize;
+        line-height: 3;
+        li {
+          position: relative;
+          &::before {
+            position: absolute;
+            left: -1.2em;
+            bottom: 1.1em;
+            content: " ";
+            display: block;
+            width: 9px;
+            height: 9px;
+            border: 2px solid $color-16;
+            border-radius: 50%;
+          }
+          .blue-text {
+            color: $color-5;
+          }
+        }
+      }
+      .carousel-control-prev-icon {
+        background-image: url(../images/carousel-left.png) !important;
+        background-size: 23px 15px;
+        background-position: 5px 6px;
+        margin: 0px 0 110px 0;
+        &::before {
+          content: " ";
+          display: block;
+          width: 66px;
+          height: 66px;
+          border-radius: 50%;
+          background: #4f595e 0% 0% no-repeat padding-box;
+          opacity: 0.1;
+          position: relative;
+          bottom: 18px;
+          right: 14px;
+        }
+      }
+      .carousel-control-next-icon {
+        background-image: url(../images/carousel-right.png) !important;
+        background-size: 23px 15px;
+        background-position: 5px 6px;
+        margin: 0px 0 110px 0;
+        &::after {
+          content: " ";
+          display: block;
+          width: 66px;
+          height: 66px;
+          border-radius: 50%;
+          background: #4f595e 0% 0% no-repeat padding-box;
+          opacity: 0.1;
+          position: relative;
+          bottom: 18px;
+          right: 14px;
+        }
+      }
+    }
+  }
+  .carousel-container {
+    .carousel-heading {
+      @include text-property($font-20, $color-10, $font-700);
+    }
+    .image-carousel {
+      .image-carousel-col {
+        @include card-property($color-3);
+        border-radius: 4px;
+        width: 276px;
+        height: 117px;
+        .logo-sundaram {
+          width: 244px;
+          height: 63px;
+        }
+        .logo-finance {
+          width: 224px;
+          height: 31px;
+        }
+        .logo-royal-sundaram {
+          width: 222px;
+          height: 68px;
+        }
+        .logo-lgf {
+          width: 100px;
+          height: 88px;
+        }
+      }
+    }
+    .carousel-control-prev-icon {
+      background-image: url(../images/carousel-left.png) !important;
+      background-size: 23px 15px;
+      background-position: 5px 6px;
+      margin: 0px 0 -11px -171px;
+      &::before {
+        content: " ";
+        display: block;
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        background: #4f595e 0% 0% no-repeat padding-box;
+        opacity: 0.1;
+        position: relative;
+        bottom: 18px;
+        right: 14px;
+      }
+    }
+    .carousel-control-next-icon {
+      background-image: url(../images/carousel-right.png) !important;
+      background-size: 23px 15px;
+      background-position: 5px 6px;
+      margin: 0px 0 -11px 171px;
+      &::after {
+        content: " ";
+        display: block;
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        background: #4f595e 0% 0% no-repeat padding-box;
+        opacity: 0.1;
+        position: relative;
+        bottom: 18px;
+        right: 14px;
+      }
+    }
+  }
+}
+footer#footer {
+  background-color: $color-1;
+  .footer-info {
+    p {
+      @include text-property($font-14, $color-3, $font-400);
+      text-transform: none;
+      opacity: 0.5;
+    }
+  }
+  .footer-links {
+    h4 {
+      @include text-property($font-16, $color-3, $font-500);
+    }
+    hr {
+      &.orange-line {
+        margin: 0;
+        border-top: none;
+        width: 24px;
+        border-bottom: 3px solid $color-13;
+        opacity: 1;
+      }
+    }
+    ul {
+      li {
+        list-style-type: none;
+        padding: 0.5rem 0;
+        a {
+          @include text-property($font-14, $color-3, $font-400);
+          text-transform: capitalize;
+
+          opacity: 0.5;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .footer-newsletter {
+    h4 {
+      @include text-property($font-16, $color-3, $font-500);
+    }
+    hr {
+      &.orange-line {
+        margin: 0;
+        border-top: none;
+        width: 24px;
+        border-bottom: 3px solid $color-13;
+        opacity: 1;
+      }
+    }
+    p {
+      @include text-property($font-14, $color-3, $font-400);
+      opacity: 0.5;
+      text-transform: none;
+    }
+  }
+}
+.bla-bla {
+  margin: 20px;
+}
